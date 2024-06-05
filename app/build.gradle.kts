@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-android")
+    id("kotlin-kapt")
+
 }
 
 android {
@@ -48,9 +51,15 @@ dependencies {
 
     //Retrofit
     implementation (libs.retrofit)
+    // Retrofit with Kotlin Coroutines Adapter
+    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+    // Retrofit with Scalar Converter
+    implementation( "com.squareup.retrofit2:converter-scalars:2.9.0")
+
     //Conversor
     implementation (libs.gson)
     implementation (libs.squareup.converter.gson)
+    implementation (libs.converter.gson.v2110)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
